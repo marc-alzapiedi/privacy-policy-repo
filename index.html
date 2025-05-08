@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<script>
+  function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ iframeHeight: height }, "*");
+  }
+
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+</script>
+
 <div>
   <div data-custom-class="body">
     <div>
